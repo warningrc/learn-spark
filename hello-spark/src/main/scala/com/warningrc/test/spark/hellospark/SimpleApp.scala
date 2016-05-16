@@ -30,5 +30,6 @@ object SimpleApp {
         val conf = new Configuration()
         conf.setInt(NLineInputFormat.LINES_PER_MAP, 2);
         sc.newAPIHadoopFile(file, classOf[NLineInputFormat], classOf[LongWritable], classOf[Text], conf).map { value => value._2.toString }.collect().foreach({ text => println(text); println("xx" * 20) })
+        
     }
 }

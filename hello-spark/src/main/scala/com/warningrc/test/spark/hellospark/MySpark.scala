@@ -16,4 +16,6 @@ object MySpark {
         new SparkContext(new SparkConf().setAppName(appName)
             .setMaster(s"local[$count]").set("spark.executor.memory", memory))
     }
+
+    def getLocalSparkContext: SparkContext = getLocalSparkContext()
 }
